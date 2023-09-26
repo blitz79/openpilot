@@ -33,7 +33,7 @@ void SshControl::refresh() {
   if (param.length()) {
     setValue(QString::fromStdString(params.get("GithubUsername")));
     setText(tr("REMOVE"));
-    setDescription(desc + tr("\n\nAdded GitHub accounts: %1").arg(users));
+    setDescription(desc + "\n\n" + tr("Added GitHub accounts: %1").arg(users));
   } else {
     setValue("");
     setText(tr("ADD"));

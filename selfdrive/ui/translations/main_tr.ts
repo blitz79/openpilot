@@ -933,7 +933,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
-        <translation>UYARI: Bu, GitHub ayarlarınızdaki tüm ortak anahtarlara SSH erişimi sağlar. Asla kendi kullanıcı adınız dışında bir sonraki başlatılışında çekilir. GitHub kullanıcı adı girmeyin.</translation>
+        <translation type="vanished">UYARI: Bu, GitHub ayarlarınızdaki tüm ortak anahtarlara SSH erişimi sağlar. Asla kendi kullanıcı adınız dışında bir sonraki başlatılışında çekilir. GitHub kullanıcı adı girmeyin.</translation>
     </message>
     <message>
         <source>ADD</source>
@@ -941,7 +941,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Enter your GitHub username</source>
-        <translation>Github kullanıcı adınızı giriniz</translation>
+        <translation type="vanished">Github kullanıcı adınızı giriniz</translation>
     </message>
     <message>
         <source>LOADING</source>
@@ -962,6 +962,18 @@ This may take up to a minute.</source>
     <message>
         <source>Username &apos;%1&apos; doesn&apos;t exist on GitHub</source>
         <translation>Github kullanıcısı %1 bulunamadı</translation>
+    </message>
+    <message>
+        <source>Enter GitHub usernames</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: This grants SSH access to all public keys in the added GitHub accounts&apos; settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added GitHub accounts: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

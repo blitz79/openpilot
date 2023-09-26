@@ -939,7 +939,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
-        <translation>Warnung: Dies ermöglicht SSH zugriff für alle öffentlichen Schlüssel in deinen Github Einstellungen. Gib niemals einen anderen Benutzernamen, als deinen Eigenen an. Comma Angestellte fragen dich niemals danach ihren Github Benutzernamen hinzuzufügen.</translation>
+        <translation type="vanished">Warnung: Dies ermöglicht SSH zugriff für alle öffentlichen Schlüssel in deinen Github Einstellungen. Gib niemals einen anderen Benutzernamen, als deinen Eigenen an. Comma Angestellte fragen dich niemals danach ihren Github Benutzernamen hinzuzufügen.</translation>
     </message>
     <message>
         <source>ADD</source>
@@ -947,7 +947,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Enter your GitHub username</source>
-        <translation>Gib deinen GitHub Benutzernamen ein</translation>
+        <translation type="vanished">Gib deinen GitHub Benutzernamen ein</translation>
     </message>
     <message>
         <source>LOADING</source>
@@ -968,6 +968,18 @@ This may take up to a minute.</source>
     <message>
         <source>Username &apos;%1&apos; doesn&apos;t exist on GitHub</source>
         <translation>Benutzername &apos;%1&apos; existiert nicht auf GitHub</translation>
+    </message>
+    <message>
+        <source>Enter GitHub usernames</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: This grants SSH access to all public keys in the added GitHub accounts&apos; settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added GitHub accounts: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

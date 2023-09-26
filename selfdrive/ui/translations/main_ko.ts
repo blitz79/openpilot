@@ -935,7 +935,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
-        <translation>경고: 이 설정은 GitHub에 등록된 모든 공용 키에 대해 SSH 액세스 권한을 부여합니다. 본인의 GitHub 사용자 아이디 이외에는 입력하지 마십시오. comma에서는 GitHub 아이디를 추가하라는 요청을 하지 않습니다.</translation>
+        <translation type="vanished">경고: 이 설정은 GitHub에 등록된 모든 공용 키에 대해 SSH 액세스 권한을 부여합니다. 본인의 GitHub 사용자 아이디 이외에는 입력하지 마십시오. comma에서는 GitHub 아이디를 추가하라는 요청을 하지 않습니다.</translation>
     </message>
     <message>
         <source>ADD</source>
@@ -943,7 +943,7 @@ This may take up to a minute.</source>
     </message>
     <message>
         <source>Enter your GitHub username</source>
-        <translation>GitHub 사용자 아이디</translation>
+        <translation type="vanished">GitHub 사용자 아이디</translation>
     </message>
     <message>
         <source>LOADING</source>
@@ -964,6 +964,18 @@ This may take up to a minute.</source>
     <message>
         <source>Username &apos;%1&apos; doesn&apos;t exist on GitHub</source>
         <translation>GitHub 사용자 &apos;%1&apos;를 찾지 못했습니다</translation>
+    </message>
+    <message>
+        <source>Enter GitHub usernames</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: This grants SSH access to all public keys in the added GitHub accounts&apos; settings. Never enter a GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added GitHub accounts: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
