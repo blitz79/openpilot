@@ -10,15 +10,15 @@ SshControl::SshControl() :
 
   QObject::connect(this, &ButtonControl::clicked, [=]() {
     if (text() == tr("ADD")) {
-      QString username = InputDialog::getText(tr("Enter your GitHub username"), this);
+      QString username = InputDialog::getText(tr("Enter GitHub usernames"), this);
       if (username.length() > 0) {
+        QStringList usernames = username.split(",");
         setText(tr("LOADING"));
         setEnabled(false);
-        getUserKeys(username);
+        getUserKeys(usernames, true);
       }
     } else {
-      params.remove("GithubUsername");
-      params.remove("GithubSshKeys");
+      clearParams();
       refresh();
     }
   });
@@ -38,21 +38,30 @@ void SshControl::refresh() {
   setEnabled(true);
 }
 
-void SshControl::getUserKeys(const QString &username) {
+void SshControl::getUserKeys(const QStringList &usernames, bool start) {
   HttpRequest *request = new HttpRequest(this, false);
   QObject::connect(request, &HttpRequest::requestDone, [=](const QString &resp, bool success) {
     if (success) {
       if (!resp.isEmpty()) {
-        params.put("GithubUsername", username.toStdString());
-        params.put("GithubSshKeys", resp.toStdString());
+        std::string keys = resp.toStdString();
+        if (start) {
+          params.put("GithubUsername", usernames.join(",").toStdString());
+        } else {
+          // Add accumulated user keys
+          keys = params.get("GithubSshKeys") + "\n" + keys;
+        }
+        params.put("GithubSshKeys", keys);
       } else {
-        ConfirmationDialog::alert(tr("Username '%1' has no keys on GitHub").arg(username), this);
+        ConfirmationDialog::alert(tr("Username '%1' has no keys on GitHub").arg(usernames.at(0)), this);
       }
+      // Get next username if 1 left
+      if (usernames.size() > 1) getUserKeys(usernames.mid(1, usernames.size() - 1), false);
     } else {
+      clearParams();
       if (request->timeout()) {
         ConfirmationDialog::alert(tr("Request timed out"), this);
       } else {
-        ConfirmationDialog::alert(tr("Username '%1' doesn't exist on GitHub").arg(username), this);
+        ConfirmationDialog::alert(tr("Username '%1' doesn't exist on GitHub").arg(usernames.at(0)), this);
       }
     }
 
@@ -60,5 +69,7 @@ void SshControl::getUserKeys(const QString &username) {
     request->deleteLater();
   });
 
-  request->sendRequest("https://github.com/" + username + ".keys");
+  if (usernames.size() > 0) {
+    request->sendRequest("https://github.com/" + usernames.at(0) + ".keys");
+  }
 }
