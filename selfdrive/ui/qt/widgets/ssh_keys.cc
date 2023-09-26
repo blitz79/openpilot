@@ -5,8 +5,7 @@
 #include "selfdrive/ui/qt/widgets/input.h"
 
 SshControl::SshControl() :
-  ButtonControl(tr("SSH Keys"), "", tr("Warning: This grants SSH access to all public keys in your GitHub settings. Never enter a GitHub username "
-                                       "other than your own. A comma employee will NEVER ask you to add their GitHub username.")) {
+  ButtonControl(tr("SSH Keys"), "", "") {
 
   QObject::connect(this, &ButtonControl::clicked, [=]() {
     if (text() == tr("ADD")) {
@@ -28,12 +27,17 @@ SshControl::SshControl() :
 
 void SshControl::refresh() {
   QString param = QString::fromStdString(params.get("GithubSshKeys"));
+  QString users = QString::fromStdString(params.get("GithubUsername")).split(",").join(", ");
+  QString desc = tr("Warning: This grants SSH access to all public keys in the added GitHub accounts' settings. Never enter a "
+                    "GitHub username other than your own. A comma employee will NEVER ask you to add their GitHub username.");
   if (param.length()) {
     setValue(QString::fromStdString(params.get("GithubUsername")));
     setText(tr("REMOVE"));
+    setDescription(desc + tr("\n\nAdded GitHub accounts: %1").arg(users));
   } else {
     setValue("");
     setText(tr("ADD"));
+    setDescription(desc);
   }
   setEnabled(true);
 }
