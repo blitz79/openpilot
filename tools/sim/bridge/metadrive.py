@@ -189,7 +189,9 @@ class MetaDriveBridge(SimulatorBridge):
               straight_block(120),
               curve_block(120, 90),
             ]
-          )
+          ),
+          physics_world_step_size=self.TICKS_PER_FRAME / 100,
+          decision_repeat=1
         )
       )
 
